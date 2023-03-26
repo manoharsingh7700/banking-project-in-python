@@ -1,0 +1,80 @@
+class banking():
+    def _init_(self):
+        self.a=int(input("enter account number:"))
+        self.b=input("enter name:")
+        self.c=input("enter type:")
+        self.d=int(input("enter amount:"))
+        print("account created.......")
+    
+    def bal(self,acno):
+        k=0
+        if(self.a==acno):
+            print("ACNO:",self.a)
+            print("NAME:",self.b)
+            print("TYPE:",self.c)
+            print("AMT:",self.d)
+            print("..............")
+            k=1
+            
+    def dep(self,acno):
+        k=0
+        if(self.a==acno):
+            
+            A=int(input("enter amount to deposited:"))
+            x=self.d+A
+            print("ACNO:",self.a)
+            print("NAME:",self.b)
+            print("TYPE:",self.c)
+            print("AMT:",x)
+            print("..............")
+            k=1
+            
+    def withd(self,acno):
+        k=0
+        if(self.a==acno):
+            
+            A=int(input("enter amount to be withdraw:"))
+            x=self.d-A
+            print("ACNO:",self.a)
+            print("NAME:",self.b)
+            print("TYPE:",self.c)
+            print("AMT:",x)
+            print("..............")
+            k=1  
+        return k
+    
+ls=[]
+for i in range(0,3):
+    b=banking_account()
+    ls.append(b)
+    
+print("1:deposit\n2:withdraw\n3:balance enq")
+
+ch=int(input("enter choice:"))
+
+if(ch==3):
+    k=0
+    acno=int(input("enter acno to check balance: "))
+    for i in range(0,3):
+        if(ls.bal(acno)==1):
+            k=k+1
+        if(k==0):
+            print("not found")
+            
+elif(ch==1):   
+    k=0
+    acno=int(input("enter acno to deposit: "))
+    for i in range(0,3):
+        if(ls.dep(acno)==1):
+            k=k+1
+        if(k==0):
+            print("not found")
+            
+else:
+    k=0
+    Acno=int(input("enter acno to withdraw: "))
+    for i in range(0,3):
+        if(ls[i].withd(acno)==1):
+            k=k+1
+        if(k==0):
+            print("not found")   
